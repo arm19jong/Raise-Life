@@ -19,31 +19,55 @@ public class control_Player : MonoBehaviour {
 	}
 	void Start () {
 		anim = GetComponent<Animator> ();
-
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		if (b.isclick) {
+		if (b.isclick) 
+		{
 			boot = 2;
-		} else {
+		} 
+		else 
+		{
 			boot = 1;
-		}
-		if (a.moveX != 0) {
-			rect.Translate (0.0008f * a.moveX*boot, 0, 0);
-			anim.SetBool("iswalking", true);
-			anim.SetFloat ("input_x", a.moveX*boot);
-		}
-		if (a.moveY != 0) {
-			rect.Translate (0, 0.0008f * a.moveY*boot, 0);
-			anim.SetBool("iswalking", true);
-			anim.SetFloat ("input_y", a.moveY);
 		}
 		if (a.moveX == 0 && a.moveY == 0) {
 			anim.SetBool("iswalking", false);
 		}
 
-		//print (a.moveX+"");
+		else if(Mathf.Abs(a.moveX)>Mathf.Abs(a.moveY)){
+			anim.SetBool("iswalking", true);
+			anim.SetFloat ("input_y", 0);
+			if (a.moveX>0)
+			{
+				anim.SetFloat ("input_x", 1);
+				rect.Translate ( 0.1f*boot, 0, 0);
+			}
+			else
+			{
+				anim.SetFloat ("input_x", -1);
+				rect.Translate ( -0.1f*boot, 0, 0);
+			}
+		}
+		else if(Mathf.Abs(a.moveX)<=Mathf.Abs(a.moveY)){
+
+			anim.SetBool("iswalking", true);
+			anim.SetFloat ("input_x", 0);
+			if(a.moveY>0)
+			{
+				anim.SetFloat ("input_y", 1);
+				rect.Translate (0, 0.1f *boot, 0);
+			}
+			else
+			{
+				anim.SetFloat ("input_y", -1);
+				rect.Translate (0, -0.1f *boot, 0);
+			}
+
+		}
+
+
+		//print (a.moveX+"//"+a.moveY);
 		//print ("a");
 	}
 }

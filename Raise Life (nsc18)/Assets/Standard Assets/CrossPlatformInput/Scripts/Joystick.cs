@@ -108,10 +108,13 @@ namespace UnityStandardAssets.CrossPlatformInput
 			UpdateVirtualAxes(m_StartPos);
 			moveX = 0;
 			moveY = 0;
+
 		}
 
 
-		public void OnPointerDown(PointerEventData data) { }
+		public void OnPointerDown(PointerEventData data) { 
+			print ("tap");
+		}
 
 		void OnDisable()
 		{
@@ -125,5 +128,6 @@ namespace UnityStandardAssets.CrossPlatformInput
 				m_VerticalVirtualAxis.Remove();
 			}
 		}
+
 	}
 }
