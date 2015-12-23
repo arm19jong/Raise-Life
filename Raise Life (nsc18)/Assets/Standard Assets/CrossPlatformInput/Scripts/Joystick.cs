@@ -6,6 +6,8 @@ namespace UnityStandardAssets.CrossPlatformInput
 {
 	public class Joystick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragHandler
 	{
+		public int moveX;
+		public int moveY;
 		public enum AxisOption
 		{
 			// Options for which axes to use
@@ -80,6 +82,8 @@ namespace UnityStandardAssets.CrossPlatformInput
 				int delta = (int)(data.position.x - m_StartPos.x);
 				delta = Mathf.Clamp(delta, - MovementRange, MovementRange);
 				newPos.x = delta;
+				moveX = delta;
+				//moveX = data.position.x;
 			}
 
 			if (m_UseY)
@@ -87,7 +91,12 @@ namespace UnityStandardAssets.CrossPlatformInput
 				int delta = (int)(data.position.y - m_StartPos.y);
 				delta = Mathf.Clamp(delta, -MovementRange, MovementRange);
 				newPos.y = delta;
+				moveY = delta;
+				//moveY = data.position.y;
 			}
+
+			//print (moveX);
+			//print (data.position.y+"//"+data.position.x);
 			transform.position = new Vector3(m_StartPos.x + newPos.x, m_StartPos.y + newPos.y, m_StartPos.z + newPos.z);
 			UpdateVirtualAxes(transform.position);
 		}
@@ -97,10 +106,15 @@ namespace UnityStandardAssets.CrossPlatformInput
 		{
 			transform.position = m_StartPos;
 			UpdateVirtualAxes(m_StartPos);
+			moveX = 0;
+			moveY = 0;
+
 		}
 
 
-		public void OnPointerDown(PointerEventData data) { }
+		public void OnPointerDown(PointerEventData data) { 
+			print ("tap");
+		}
 
 		void OnDisable()
 		{
@@ -114,5 +128,6 @@ namespace UnityStandardAssets.CrossPlatformInput
 				m_VerticalVirtualAxis.Remove();
 			}
 		}
+
 	}
 }
