@@ -26,10 +26,13 @@ public class control_Player : MonoBehaviour {
 		if (b.isclick) 
 		{
 			boot = 2;
+			anim.speed = 1.4f;
 		} 
 		else 
 		{
 			boot = 1;
+			anim.speed=0.7f;
+			//anim.
 		}
 		if (a.moveX == 0 && a.moveY == 0) {
 			anim.SetBool("iswalking", false);
