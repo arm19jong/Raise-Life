@@ -5,6 +5,7 @@ using UnityStandardAssets.CrossPlatformInput;
 public class control_Player : MonoBehaviour {
 
 	// Use this for initialization
+	//public GameObject aaa;
 	public static control_Player instance;
 	public Joystick a;
 	public conver b;
