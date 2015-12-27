@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
+//using System;
 using System.Collections;
+
 
 public class cow : MonoBehaviour {
 	float timeLeft = 0.0f;
@@ -7,12 +9,16 @@ public class cow : MonoBehaviour {
 	public static cow instance;
 	int randomxy = 0;
 	int randomint = 0;
+	int x=0;
+	int y=0;
+
 	Animator anim;
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator> ();
 		instance = this;
 		rect = gameObject.GetComponent<Transform> ();
+		//print (""+DateTime.Now.Year);
 	}
 	
 	// Update is called once per frame
@@ -27,6 +33,7 @@ public class cow : MonoBehaviour {
 
 			if (randomxy==0)
 			{
+				x+=1;
 				while(randomint==0){
 				randomint = Random.Range(-1, 2);
 				}
@@ -36,6 +43,7 @@ public class cow : MonoBehaviour {
 			}
 			else
 			{
+				y+=1;
 				while(randomint==0){
 					randomint = Random.Range(-1, 2);
 				}
@@ -45,7 +53,7 @@ public class cow : MonoBehaviour {
 			}
 
 
-
+			print (x+"//"+y);
 		} 
 		//walk
 		if (timeLeft < 2) 

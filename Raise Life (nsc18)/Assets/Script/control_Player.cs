@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityStandardAssets.CrossPlatformInput;
+using System;
 
 public class control_Player : MonoBehaviour {
 
@@ -20,6 +21,7 @@ public class control_Player : MonoBehaviour {
 	}
 	void Start () {
 		anim = GetComponent<Animator> ();
+		//print (""+DateTime.Now.Year);
 	}
 	
 	// Update is called once per frame
