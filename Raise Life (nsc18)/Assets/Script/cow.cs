@@ -9,8 +9,7 @@ public class cow : MonoBehaviour {
 	public static cow instance;
 	int randomxy = 0;
 	int randomint = 0;
-	int x=0;
-	int y=0;
+
 
 	Animator anim;
 	// Use this for initialization
@@ -26,34 +25,31 @@ public class cow : MonoBehaviour {
 		timeLeft -= Time.deltaTime;
 
 		if (timeLeft <= 0) {
-			//print ("e");
 			timeLeft = 4.0f;
 			anim.SetBool("iswalking", false);
-			randomxy = Random.Range(0,2);
+			//randomxy = Random.Range(0,2);
+
+			randomint = Random.Range(-10, 11);
+			if(randomint<0){randomxy=0;}
+			else{randomxy=1;}
 
 			if (randomxy==0)
 			{
-				x+=1;
-				while(randomint==0){
-				randomint = Random.Range(-1, 2);
-				}
+				randomint = Random.Range(-10, 11);
+				if(randomint<0){randomint=-1;}
+				else{randomint=1;}
 				anim.SetFloat ("input_x", randomint);
 				anim.SetFloat ("input_y", 0);
-
 			}
 			else
 			{
-				y+=1;
-				while(randomint==0){
-					randomint = Random.Range(-1, 2);
-				}
+				randomint = Random.Range(-10, 11);
+				if(randomint<0){randomint=-1;}
+				else{randomint=1;}
 				anim.SetFloat ("input_y", randomint);
 				anim.SetFloat ("input_x", 0);
 
 			}
-
-
-			print (x+"//"+y);
 		} 
 		//walk
 		if (timeLeft < 2) 
