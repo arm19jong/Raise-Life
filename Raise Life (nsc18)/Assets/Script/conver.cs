@@ -13,16 +13,12 @@ public class conver : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		isclick = CrossPlatformInputManager.GetButton ("Jump");
+		//isclick = CrossPlatformInputManager.GetButton ("Jump");
 
 	}
 
 
-	void OnGUI() {
-		if (isclick) {
-			GUI.Label(new Rect(10, 10, 100, 20), "Hello World!");
-		}
-	}
+
 
 
 }

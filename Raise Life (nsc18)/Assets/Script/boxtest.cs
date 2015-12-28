@@ -12,7 +12,7 @@ public class boxtest : MonoBehaviour {
 
 	void OnGUI() {
 		if (oncon) {
-			GUI.Label (new Rect (10, 10, 100, 20), "Hello World!");
+			GUI.Label (new Rect (10, 10, 100, 20), "Hello---");
 		}
 	}
 }

@@ -9,15 +9,16 @@ public class control_Player : MonoBehaviour {
 	//public GameObject aaa;
 	public static control_Player instance;
 	public Joystick a;
-	public conver b;
+	//public conver b;
 	public Transform rect; 
 	public float boot=1;
+	public bool isclick=false;
 	Animator anim;
 	void Awake (){
 		instance = this;
 		rect = gameObject.GetComponent<Transform> ();
 		a = GameObject.Find ("MobileSingleStickControl").transform.FindChild ("MobileJoystick").GetComponent<Joystick> ();
-		b = GameObject.Find ("MobileSingleStickControl").transform.FindChild ("JumpButton").GetComponent<conver> ();
+		//b = GameObject.Find ("MobileSingleStickControl").transform.FindChild ("JumpButton").GetComponent<conver> ();
 	}
 	void Start () {
 		anim = GetComponent<Animator> ();
@@ -26,7 +27,7 @@ public class control_Player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		if (b.isclick) 
+		if (isclick) 
 		{
 			boot = 2;
 			anim.speed = 1.4f;
@@ -75,5 +76,13 @@ public class control_Player : MonoBehaviour {
 
 		//print (a.moveX+"//"+a.moveY);
 		//print ("a");
+	}
+	public void down(){
+		isclick = true;
+		FixedUpdate ();
+	}
+	public void up(){
+		isclick = false;
+		FixedUpdate ();
 	}
 }
