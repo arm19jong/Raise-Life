@@ -113,7 +113,7 @@ namespace UnityStandardAssets.CrossPlatformInput
 
 
 		public void OnPointerDown(PointerEventData data) { 
-			print ("tap");
+			//print ("tap");
 		}
 
 		void OnDisable()

@@ -52,25 +52,21 @@ public class cow : MonoBehaviour {
 			}
 		} 
 		//walk
-		if (timeLeft < 2) 
-		{
-			anim.SetBool("iswalking", true);
+		if (timeLeft < 2) {
+			anim.SetBool ("iswalking", true);
 			//anim.SetFloat ("input_x", 1);
 			//rect.Translate ( 0.01f, 0, 0);
-			if(randomxy==0)
-			{
-				rect.Translate ( 0.01f*randomint, 0, 0);
-			}
-			else
-			{
-				rect.Translate ( 0, 0.01f*randomint, 0);
+			if (randomxy == 0) {
+				rect.Translate (0.01f * randomint, 0, 0);
+			} else {
+				rect.Translate (0, 0.01f * randomint, 0);
 			}
 		}
 		//stop
-		else 
-		{
-			anim.SetBool("iswalking", false);
+		else {
+			anim.SetBool ("iswalking", false);
 			//anim.SetFloat ("input_x", 0);
 		}
+		
 	}
 }

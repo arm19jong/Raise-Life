@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityStandardAssets.CrossPlatformInput;
 public class prefab : MonoBehaviour {
 	public prefab b;
@@ -25,8 +27,12 @@ public class prefab : MonoBehaviour {
 
 	}
 	public void t(){
+		#if UNITY_EDITOR
 		Object prefab = AssetDatabase.LoadAssetAtPath("Assets/prefab/cow.prefab", typeof(GameObject));
 		GameObject clone = Instantiate(prefab, Vector3.zero, Quaternion.identity) as GameObject;
+
 		clone.transform.position = new Vector3(0, 0, 0);
+		#endif
+
 	}
 }
