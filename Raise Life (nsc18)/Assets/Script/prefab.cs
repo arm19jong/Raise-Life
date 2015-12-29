@@ -1,15 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEditor;
 //using UnityEditor;
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
+//using UnityEditor;
+
 using UnityStandardAssets.CrossPlatformInput;
 public class prefab : MonoBehaviour {
 	//public prefab b;
 	public bool isclick = false;
-	//public Rigidbody prefab;
+	//public NewBehavi classAObj;
+	//public Transform cow;
 	// Use this for initialization
 	//@MenuItem("AssetDatabase/LoadAssetExample");
 	void Start () {
@@ -39,18 +38,19 @@ public class prefab : MonoBehaviour {
 	}
 	public void buttonBoot_Down(){
 		print (111);
-		#if UNITY_EDITOR_WIN
+		//#if UNITY_EDITOR
 		print (222);
-		Object prefab = AssetDatabase.LoadAssetAtPath("Assets/prefab/cow.prefab", typeof(GameObject));
+		//Object prefab = AssetDatabase.LoadAssetAtPath("Assets/prefab/cow.prefab", typeof(GameObject));
 		print(333);
-		GameObject clone = Instantiate(prefab, Vector3.zero, Quaternion.identity) as GameObject;
+		GameObject clone = Instantiate(Resources.Load("cow"), Vector3.zero, Quaternion.identity) as GameObject;
 		print (444);
 		clone.transform.position = new Vector3(5, 2, 0);
 		print(555);
-		#endif
+		//#endif
 		//Instantiate(prefab, new Vector3(5, 2, 0), Quaternion.identity);
 		isclick = true;
 		print (666);
+
 
 
 	}
@@ -61,11 +61,12 @@ public class prefab : MonoBehaviour {
 	}
 
 		
-
+	/*
 	public void OnGUI() {
 		//isclick = CrossPlatformInputManager.GetButton ("Jump");
 		if (isclick) {
 			GUI.Label(new Rect(10, 10, 100, 20), "Hello World!");
 		}
 	}
+	*/
 }
