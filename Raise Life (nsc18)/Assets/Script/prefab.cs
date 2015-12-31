@@ -37,21 +37,9 @@ public class prefab : MonoBehaviour {
 
 	}
 	public void buttonBoot_Down(){
-		print (111);
-		//#if UNITY_EDITOR
-		print (222);
-		//Object prefab = AssetDatabase.LoadAssetAtPath("Assets/prefab/cow.prefab", typeof(GameObject));
-		print(333);
 		GameObject clone = Instantiate(Resources.Load("cow1"), Vector3.zero, Quaternion.identity) as GameObject;
-		print (444);
 		clone.transform.position = new Vector3(5, 2, 0);
-		print(555);
-		//#endif
-		//Instantiate(prefab, new Vector3(5, 2, 0), Quaternion.identity);
 		isclick = true;
-		print (666);
-
-
 
 	}
 	public void buttonBoot_Up(){
