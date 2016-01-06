@@ -85,4 +85,11 @@ public class control_Player : MonoBehaviour {
 		isclick = false;
 		FixedUpdate ();
 	}
+	public void save(){
+		SaveClass.s.Splayer.x = gameObject.transform.position.x;
+		SaveClass.s.Splayer.y = gameObject.transform.position.y;
+	}
+	public void load(){
+		gameObject.transform.position  = new Vector2( SaveClass.s.Splayer.x, SaveClass.s.Splayer.y);
+	}
 }

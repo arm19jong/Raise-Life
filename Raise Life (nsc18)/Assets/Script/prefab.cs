@@ -37,8 +37,9 @@ public class prefab : MonoBehaviour {
 
 	}
 	public void buttonBoot_Down(){
-		GameObject clone = Instantiate(Resources.Load("cow1"), Vector3.zero, Quaternion.identity) as GameObject;
-		clone.transform.position = new Vector3(5, 2, 0);
+		//GameObject clone = Instantiate(Resources.Load("cow1"), Vector3.zero, Quaternion.identity) as GameObject;
+		//clone.transform.SetParent(GameObject.Find("_gameAsset").transform.FindChild("Cow_list").GetComponent<Transform>());
+		//clone.transform.position = new Vector3(5, 2, 0);
 		isclick = true;
 
 	}

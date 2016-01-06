@@ -5,7 +5,7 @@ public class time : MonoBehaviour {
 	private GUIStyle guiStyle = new GUIStyle(); //create a new variable
 	float a=0;
 	int min = 0;
-	int hours = 6;
+	public int hours = 6;
 	string s_min = "";
 	string s_hours = "";
 	void OnGUI()
