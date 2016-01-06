@@ -15,14 +15,18 @@ public class save_load : MonoBehaviour {
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.S)) {
 			//SaveClass.s = new SaveClass();
+			GameObject.Find("_gameAsset").GetComponent<saveAsset>().save();
 			GameObject.Find ("player").GetComponent<control_Player>().save();
 			save();
 			//print("S"+SaveClass.s.Splayer.x.ToString()+"//"+SaveClass.s.Splayer.y.ToString());
+
 		}
 		if (Input.GetKeyDown (KeyCode.D)) {
 			load();
 			//print("L"+SaveClass.s.Splayer.x.ToString()+"//"+SaveClass.s.Splayer.y.ToString());
 			GameObject.Find ("player").GetComponent<control_Player>().load();
+			GameObject.Find("_gameAsset").GetComponent<saveAsset>().load();
+
 		}
 	
 	

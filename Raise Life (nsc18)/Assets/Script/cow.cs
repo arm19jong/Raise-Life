@@ -9,6 +9,7 @@ public class cow : MonoBehaviour {
 	public static cow instance;
 	int randomxy = 0;
 	int randomint = 0;
+	public long ID=-1;
 
 
 	Animator anim;
@@ -25,7 +26,7 @@ public class cow : MonoBehaviour {
 		timeLeft -= Time.deltaTime;
 
 		if (timeLeft <= 0) {
-			timeLeft = 4.0f;
+			timeLeft = Random.Range(1, 4);
 			anim.SetBool("iswalking", false);
 			//randomxy = Random.Range(0,2);
 
@@ -67,6 +68,7 @@ public class cow : MonoBehaviour {
 			anim.SetBool ("iswalking", false);
 			//anim.SetFloat ("input_x", 0);
 		}
+
 		
 	}
 }
