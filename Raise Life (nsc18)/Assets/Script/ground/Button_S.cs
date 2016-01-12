@@ -12,6 +12,7 @@ public class Button_S : MonoBehaviour {
 	public Image image_joy;
 
 	public Canvas t;
+	public Canvas tt;
 
 	EventTrigger.Entry entry = new EventTrigger.Entry();
 
@@ -22,7 +23,8 @@ public class Button_S : MonoBehaviour {
 		joy = GameObject.Find ("MobileSingleStickControl").transform.FindChild ("MobileJoystick").GetComponent<Joystick> ();
 		image_joy = GameObject.Find ("MobileSingleStickControl").transform.FindChild ("MobileJoystick").GetComponent<Image> ();
 		t= GameObject.Find ("MobileSingleStickControl").GetComponent<Canvas> ();
-
+		tt= GameObject.Find ("Canvas").GetComponent<Canvas> ();
+		tt.enabled = false;
 		
 
 	}
@@ -34,6 +36,7 @@ public class Button_S : MonoBehaviour {
 		//joy.enabled=!joy.enabled;
 		//image_joy.enabled = !image_joy.enabled;
 		t.enabled = !t.enabled;
+		tt.enabled = !tt.enabled;
 		////GameObject.Find ("MobileSingleStickControl").SetActive (false);
 		isclick = true;
 		//t.gameObject.SetActive (false);
