@@ -1,11 +1,13 @@
 using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityStandardAssets.CrossPlatformInput;
 
 namespace UnityStandardAssets.CrossPlatformInput
 {
 	public class Joystick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragHandler
 	{
+
 		public int moveX;
 		public int moveY;
 		public enum AxisOption
@@ -119,13 +121,19 @@ namespace UnityStandardAssets.CrossPlatformInput
 		public void OnDisable()
 		{
 			// remove the joysticks from the cross platform input
+
 			if (m_UseX)
 			{
+
 				m_HorizontalVirtualAxis.Remove();
+
+
 			}
 			if (m_UseY)
 			{
+
 				m_VerticalVirtualAxis.Remove();
+
 			}
 
 		}
