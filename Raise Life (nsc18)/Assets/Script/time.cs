@@ -8,6 +8,9 @@ public class time : MonoBehaviour {
 	public int hours = 6;
 	string s_min = "";
 	string s_hours = "";
+	void Start(){
+		StartCoroutine("timecounter");
+	}
 	void OnGUI()
 	{
 		guiStyle.fontSize = 25;
@@ -21,6 +24,7 @@ public class time : MonoBehaviour {
 	}
 	void FixedUpdate()
 	{
+		/*
 		a += Time.deltaTime;
 		if (a>=10){
 			a=0;
@@ -33,5 +37,26 @@ public class time : MonoBehaviour {
 		if(hours>=24){
 			hours=0;
 		}
+		*/
 	}
+
+	IEnumerator timecounter(){
+		while (true) {
+			//print (1);
+			a += Time.deltaTime;
+			if (a>=10){
+				a=0;
+				min+=10;
+			}
+			if (min>=60){
+				min=0;
+				hours+=1;
+			}
+			if(hours>=24){
+				hours=0;
+			}
+			yield return new WaitForSeconds(Time.deltaTime);
+		}
+	}
+
 }

@@ -11,6 +11,8 @@ public class vvv : MonoBehaviour {
 	//public control_Player con;
 	int x;
 	int y;
+	float tran_x;
+	float tran_y;
 	public Vector3 touch_input;
 	//Camera camera;
 	Camera cameraa;
@@ -36,8 +38,10 @@ public class vvv : MonoBehaviour {
 				touch = Input.GetTouch (0);
 				//if (touch.position.x >= Screen.width / 2 || touch.position.y < Screen.height / 2) {
 				//} else {
-					touch_input = cameraa.ScreenToWorldPoint (new Vector3 (touch.position.x, touch.position.y, Camera.main.nearClipPlane));
-					transform.position = new Vector3 (touch_input.x, touch_input.y, 0);
+				touch_input = cameraa.ScreenToWorldPoint (new Vector3 (touch.position.x, touch.position.y, Camera.main.nearClipPlane));
+				tran_x = Mathf.Round(touch_input.x);
+				tran_y = Mathf.Round(touch_input.y);
+				transform.position = new Vector3 (tran_x, tran_y, 0);
 				//}
 			}
 		}
