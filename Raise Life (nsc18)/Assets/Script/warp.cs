@@ -10,6 +10,10 @@ public class warp : MonoBehaviour {
 
 	public Transform warpTarget;
 	IEnumerator OnTriggerEnter2D(Collider2D other){
+		print (other.gameObject.name.ToString());
+		if (!other.gameObject.name.ToString ().Equals ("player")) {
+			return true;
+		}
 		//a.OnDisable ();
 		//screenfader af = GameObject.Find("MobileSingleStickControl").transform.FindChild ("Image").GetComponent<screenfader> ();
 		//screenfader af = GameObject.FindGameObjectsWithTag().ge ; 
