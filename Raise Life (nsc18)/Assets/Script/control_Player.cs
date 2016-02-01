@@ -11,12 +11,14 @@ public class control_Player : MonoBehaviour {
 	public Joystick a;
 	//public conver b;
 	public Transform rect; 
+	public Rigidbody2D rb;
 	public float boot=1;
 	public bool isclick=false;
 	Animator anim;
 	void Awake (){
 		instance = this;
 		rect = gameObject.GetComponent<Transform> ();
+		rb = gameObject.GetComponent<Rigidbody2D> ();
 		a = GameObject.Find ("MobileSingleStickControl").transform.FindChild ("MobileJoystick").GetComponent<Joystick> ();
 		//b = GameObject.Find ("MobileSingleStickControl").transform.FindChild ("JumpButton").GetComponent<conver> ();
 	}
@@ -40,20 +42,24 @@ public class control_Player : MonoBehaviour {
 		}
 		if (a.moveX == 0 && a.moveY == 0) {
 			anim.SetBool("iswalking", false);
+			//rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
 		}
 
 		else if(Mathf.Abs(a.moveX)>Mathf.Abs(a.moveY)){
+			//rb.constraints = RigidbodyConstraints2D.FreezeRotation;
 			anim.SetBool("iswalking", true);
 			anim.SetFloat ("input_y", 0);
 			if (a.moveX>0)
 			{
 				anim.SetFloat ("input_x", 1);
 				rect.Translate ( 0.1f*boot, 0, 0);
+				//rb.position += new Vector2(0.1f*boot, 0);
 			}
 			else
 			{
 				anim.SetFloat ("input_x", -1);
 				rect.Translate ( -0.1f*boot, 0, 0);
+				//rb.position += new Vector2(-0.1f*boot, 0);
 			}
 		}
 		else if(Mathf.Abs(a.moveX)<=Mathf.Abs(a.moveY)){
@@ -64,11 +70,13 @@ public class control_Player : MonoBehaviour {
 			{
 				anim.SetFloat ("input_y", 1);
 				rect.Translate (0, 0.1f *boot, 0);
+				//rb.position += new Vector2(0, 0.1f *boot);
 			}
 			else
 			{
 				anim.SetFloat ("input_y", -1);
 				rect.Translate (0, -0.1f *boot, 0);
+				//rb.position += new Vector2(0, -0.1f *boot);
 			}
 
 		}
