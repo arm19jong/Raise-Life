@@ -31,7 +31,7 @@ public class control_Player : MonoBehaviour {
 	void FixedUpdate () {
 		if (isclick) 
 		{
-			boot = 2;
+			boot = 3;
 			anim.speed = 1.4f;
 		} 
 		else 
