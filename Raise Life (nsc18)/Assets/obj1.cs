@@ -10,9 +10,11 @@ public class obj1 : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rect = gameObject.GetComponent<Transform> ();
-		pic = gameObject.transform.FindChild("timeleft").GetComponent<SpriteRenderer> ();
+		//pic = gameObject.transform.FindChild("timeleft").GetComponent<SpriteRenderer> ();
+		pic = GameObject.Find("obj").transform.FindChild("timeleft").GetComponent<SpriteRenderer> ();
 		pic.enabled = false;
-		time = gameObject.transform.FindChild("timeleft").GetComponent<obj1_time> ();
+		//time = gameObject.transform.FindChild("timeleft").GetComponent<obj1_time> ();
+		time = GameObject.Find("obj").transform.FindChild("timeleft").GetComponent<obj1_time> ();
 		print (rect.position.x);
 	}
 	

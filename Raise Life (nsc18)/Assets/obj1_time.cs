@@ -15,6 +15,15 @@ public class obj1_time : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		timeleft -= Time.deltaTime;
+		if (Mathf.RoundToInt (timeleft) <= 0) {
+			timeleft = 0;
+			//gameObject.GetComponent<SpriteRenderer> ().sprite = Resources.Load("img1", typeof(Sprite)) as Sprite;
+			GameObject.Find("obj").transform.FindChild("obj1").GetComponent<SpriteRenderer>().sprite = Resources.Load("img1", typeof(Sprite)) as Sprite;
+			//transform.localScale = new Vector3 (0.3f, 0.3f, 1f);
+			GameObject.Find("obj").transform.FindChild("obj1").GetComponent<Transform>().transform.localScale=new Vector3 (0.2f, 0.2f, 1f);
+		}
+
+
 	}
 	void OnGUI()
 	{
@@ -24,7 +33,7 @@ public class obj1_time : MonoBehaviour {
 		//guiStyle
 		guiStyle.normal.textColor = Color.black;
 		if (show == true) {
-			GUI.Label (new Rect (Screen.width / 2, Screen.height / 2, 110, 50), (Mathf.CeilToInt (timeleft)).ToString (), guiStyle);
+			GUI.Label (new Rect (Screen.width / 2, Screen.height / 2, 110, 50), (Mathf.RoundToInt (timeleft)).ToString (), guiStyle);
 		} else
 			{
 			GUI.Label (new Rect (Screen.width / 2, Screen.height / 2, 110, 50), "", guiStyle);
