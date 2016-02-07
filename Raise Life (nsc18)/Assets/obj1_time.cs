@@ -4,11 +4,11 @@ using System.Collections;
 
 public class obj1_time : MonoBehaviour {
 	private GUIStyle guiStyle = new GUIStyle(); //create a new variable
-	private float timeleft;
+	public float timeleft;
 	public bool show;
 	// Use this for initialization
 	void Start () {
-		timeleft = 10.0f;
+		timeleft = 5.0f;
 		show = false;
 	}
 	
@@ -21,6 +21,7 @@ public class obj1_time : MonoBehaviour {
 			GameObject.Find("obj").transform.FindChild("obj1").GetComponent<SpriteRenderer>().sprite = Resources.Load("img1", typeof(Sprite)) as Sprite;
 			//transform.localScale = new Vector3 (0.3f, 0.3f, 1f);
 			GameObject.Find("obj").transform.FindChild("obj1").GetComponent<Transform>().transform.localScale=new Vector3 (0.2f, 0.2f, 1f);
+			GameObject.Find("obj").transform.FindChild("obj1").GetComponent<BoxCollider2D> ().size = new Vector2 (5f, 4.2f);
 		}
 
 
@@ -41,7 +42,8 @@ public class obj1_time : MonoBehaviour {
 	}
 	void OnMouseDown () {
 		show = !show;
-		gameObject.GetComponent<SpriteRenderer> ().enabled=false;
+		gameObject.GetComponent<SpriteRenderer> ().enabled = false;
+		gameObject.GetComponent<BoxCollider2D> ().enabled = false;
 		//pic.enabled=!pic.enabled;
 	}
 }
