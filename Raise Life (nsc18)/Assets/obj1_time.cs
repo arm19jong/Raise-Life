@@ -8,7 +8,7 @@ public class obj1_time : MonoBehaviour {
 	public bool show;
 	// Use this for initialization
 	void Start () {
-		timeleft = 5.0f;
+		timeleft = 40.0f;
 		show = false;
 	}
 	
