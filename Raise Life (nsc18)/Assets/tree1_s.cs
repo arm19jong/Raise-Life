@@ -13,10 +13,13 @@ public class tree1_s : MonoBehaviour {
 	
 	}
 	void OnMouseDown (){
+		/*
 		GameObject clone = Instantiate(Resources.Load("obj"), Vector3.zero, Quaternion.identity) as GameObject;
-		//clone.transform.SetParent(GameObject.Find("_gameAsset").transform.FindChild("Cow_list").GetComponent<Transform>());
+		clone.transform.SetParent(GameObject.Find("_gameAsset").transform.FindChild("Ground_list").GetComponent<Transform>());
 		clone.name = "obj";
 		clone.transform.position = new Vector3(-0.4f, 1.21f, 0);
+		*/
+		GameObject.Find ("_gameAsset").transform.FindChild ("Ground_list").GetComponent<code_Ground_list> ().genground ();
 		gameObject.GetComponent<SpriteRenderer> ().enabled = false;
 		gameObject.GetComponent<BoxCollider2D> ().enabled = false;
 		GameObject.Find ("objna").transform.FindChild ("bg").GetComponent<SpriteRenderer> ().enabled = false;

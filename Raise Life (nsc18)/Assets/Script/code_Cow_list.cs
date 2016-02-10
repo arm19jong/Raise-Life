@@ -19,7 +19,14 @@ public class code_Cow_list : MonoBehaviour {
 	public void save(){
 		SaveClass.s.scow.Clear ();
 		foreach(GameObject i in cow){
+			if (i.GetComponent<cow> ().ID == 0) {
+				print ("non");
+			}
+			else{
 			SaveClass.s.scow.Add(new save_Cow(i.GetComponent<cow>().ID, i.GetComponent<Transform>().position.x, i.GetComponent<Transform>().position.y));
+				//print (i.GetComponent<cow> ().ID);
+			}
+
 		}
 		print ("all cow save");
 		SaveClass.s.IDCount = IDCount;

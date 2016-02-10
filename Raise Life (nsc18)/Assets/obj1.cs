@@ -7,6 +7,7 @@ public class obj1 : MonoBehaviour {
 	private obj1_time time;
 	private SpriteRenderer pic;
 	private BoxCollider2D box;
+	public long ID=-1;
 
 	// Use this for initialization
 	void Start () {
