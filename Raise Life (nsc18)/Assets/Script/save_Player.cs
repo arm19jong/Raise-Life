@@ -7,6 +7,7 @@ public class save_Player {
 	}
 	public float x = 0;
 	public float y = 0;
+	public long money = 0;
 
 }
 

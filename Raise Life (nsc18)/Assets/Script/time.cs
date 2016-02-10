@@ -8,6 +8,7 @@ public class time : MonoBehaviour {
 	public int hours = 6;
 	string s_min = "";
 	string s_hours = "";
+	string money = "";
 	void Start(){
 		StartCoroutine("timecounter");
 	}
@@ -20,7 +21,8 @@ public class time : MonoBehaviour {
 		guiStyle.normal.textColor = Color.black;
 		s_min = min.ToString("00");
 		s_hours = hours.ToString ("00");
-		GUI.Label(new Rect(Screen.width-110, 5, 110, 50),"AaBbCc"+"\n"+s_hours+":"+s_min,  guiStyle);
+		money = (GameObject.Find ("player").GetComponent<control_Player> ().money).ToString();
+		GUI.Label(new Rect(Screen.width-110, 5, 110, 50),money+"\n"+s_hours+":"+s_min,  guiStyle);
 	}
 	void FixedUpdate()
 	{

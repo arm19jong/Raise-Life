@@ -45,6 +45,7 @@ public class obj1 : MonoBehaviour {
 				}
 			}
 			Destroy (GameObject.Find ("obj"));
+			GameObject.Find ("player").GetComponent<control_Player> ().money += 30;
 			GameObject.Find ("objna").GetComponent<BoxCollider2D> ().enabled = true;
 			GameObject.Find ("button1").GetComponent<SpriteRenderer>().enabled = true ;
 		} else {

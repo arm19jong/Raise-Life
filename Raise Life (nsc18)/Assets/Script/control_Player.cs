@@ -14,8 +14,10 @@ public class control_Player : MonoBehaviour {
 	public Rigidbody2D rb;
 	public float boot=1;
 	public bool isclick=false;
+	public long money;
 	Animator anim;
 	void Awake (){
+		money = 0;
 		instance = this;
 		rect = gameObject.GetComponent<Transform> ();
 		rb = gameObject.GetComponent<Rigidbody2D> ();
@@ -96,8 +98,10 @@ public class control_Player : MonoBehaviour {
 	public void save(){
 		SaveClass.s.Splayer.x = gameObject.transform.position.x;
 		SaveClass.s.Splayer.y = gameObject.transform.position.y;
+		SaveClass.s.Splayer.money = money;
 	}
 	public void load(){
 		gameObject.transform.position  = new Vector2( SaveClass.s.Splayer.x, SaveClass.s.Splayer.y);
+		money = SaveClass.s.Splayer.money;
 	}
 }
