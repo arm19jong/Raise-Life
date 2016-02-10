@@ -24,5 +24,9 @@ public class objna_s : MonoBehaviour {
 		tree1.enabled = !tree1.enabled;
 		bg.enabled = !bg.enabled;
 		box.enabled = !box.enabled;
+		GameObject.Find ("button1").GetComponent<SpriteRenderer>().enabled = false ;
+		gameObject.GetComponent<BoxCollider2D> ().enabled = false;
+		gameObject.transform.FindChild ("bg").GetComponent<BoxCollider2D> ().enabled = true;
+
 	}
 }

@@ -7,8 +7,11 @@ public class obj1_time : MonoBehaviour {
 	public float timeleft;
 	public bool show;
 	// Use this for initialization
+	void Awake(){
+		timeleft = 20.0f;
+	}
 	void Start () {
-		timeleft = 40.0f;
+		
 		show = false;
 	}
 	
@@ -18,10 +21,10 @@ public class obj1_time : MonoBehaviour {
 		if (Mathf.RoundToInt (timeleft) <= 0) {
 			timeleft = 0;
 			//gameObject.GetComponent<SpriteRenderer> ().sprite = Resources.Load("img1", typeof(Sprite)) as Sprite;
-			GameObject.Find("obj").transform.FindChild("obj1").GetComponent<SpriteRenderer>().sprite = Resources.Load("img1", typeof(Sprite)) as Sprite;
+			GameObject.Find("obj").transform.FindChild("obj1").GetComponent<SpriteRenderer>().sprite = Resources.Load("rice", typeof(Sprite)) as Sprite;
 			//transform.localScale = new Vector3 (0.3f, 0.3f, 1f);
-			GameObject.Find("obj").transform.FindChild("obj1").GetComponent<Transform>().transform.localScale=new Vector3 (0.2f, 0.2f, 1f);
-			GameObject.Find("obj").transform.FindChild("obj1").GetComponent<BoxCollider2D> ().size = new Vector2 (5f, 4.2f);
+			GameObject.Find("obj").transform.FindChild("obj1").GetComponent<Transform>().transform.localScale=new Vector3 (1.081438f, 1.079419f, 1.079419f);
+			//GameObject.Find("obj").transform.FindChild("obj1").GetComponent<BoxCollider2D> ().size = new Vector2 (5f, 4.2f);
 		}
 
 
